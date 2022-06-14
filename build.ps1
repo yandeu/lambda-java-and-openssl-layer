@@ -1,8 +1,8 @@
 #!/bin/pwsh
 
-Remove-Item layer/layer.zip
-
-Remove-Item -r layer -Force
+if (Test-Path layer) {
+  Remove-Item layer -force -recurse
+}
 
 docker image build -t openssl-layer .
 

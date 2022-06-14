@@ -1,7 +1,5 @@
 #!/bin/bash
 
-rm -rf layer/layer.zip
-
 rm -rf layer
 
 docker image build -t openssl-layer .

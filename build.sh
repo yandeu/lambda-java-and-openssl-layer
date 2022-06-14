@@ -1,11 +1,11 @@
-#!/bin/pwsh
+#!/bin/bash
 
-Remove-Item layer/layer.zip
+rm -rf layer/layer.zip
 
-Remove-Item -r layer -Force
+rm -rf layer
 
 docker image build -t openssl-layer .
 
 docker run --rm -v $PWD/layer/:/tmp/layer openssl-layer
 
-Get-ChildItem layer
+ls layer

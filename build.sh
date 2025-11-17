@@ -2,7 +2,9 @@
 
 rm -rf layer
 
-docker image build -t openssl-layer .
+mkdir layer
+
+docker image build --progress=plain -t openssl-layer .
 
 docker run --rm -v $PWD/layer/:/tmp/layer openssl-layer
 
